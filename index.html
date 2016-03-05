@@ -4,6 +4,19 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" lang="es-es">
 	<title>Leer archivo de texto</title>
 
+
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+	<script>
+
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("#div1").load("datos.txt");
+			});
+		});
+	</script>
+
 	<style>
 		div {
 			margin-top: 30px;
@@ -28,24 +41,34 @@
 
 			var output = document.getElementById("fileOutput"); 
 			output.textContent = e.target.result;
-			};
+		};
 
-reader.readAsText(file);
+		reader.readAsText(file);
 
-}
+	}
 
-function getValue()
-  {
-  var x=document.getElementById("fileOutput");
-  alert(x.innerHTML);
-  }
+	function getValue()
+	{
+		var x=document.getElementById("fileOutput");
+		alert(x.innerHTML);
+	}
 
 </script>
 </head>
+
 
 <body>
 	<input id="fileInput" type="file" size="50" onchange="processFiles(this.files); ">
 	<div id="fileOutput"></div>
 	<input type="button" onclick="getValue();" name="asdf" value="holame">
+
+
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+<button>Get External Content</button>
+
+<h2>jQuery and AJAX is FUN!!!</h2>
+<p id="p1">This is some text in a paragraph.</p>
+
 </body>
 </html>
